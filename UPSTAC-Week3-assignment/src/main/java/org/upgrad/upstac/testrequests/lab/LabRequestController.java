@@ -71,9 +71,9 @@ public class LabRequestController {
         //Implement this method to return the list of test requests assigned to current tester(make use of the above created User object)
         //Make use of the findByTester() method from testRequestQueryService class
         // For reference check the method getForTests() method from LabRequestController class
+    	User tester =userLoggedInService.getLoggedInUser();
 
-        throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED,"Not implemented"); // replace this line with your code
-
+    	return testRequestQueryService.findByTester(tester);
 
     }
 
